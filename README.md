@@ -59,16 +59,26 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 ### Build Docker Image
 
 ```bash
-docker build -t lb-frontend .
+docker build -t lb-frontend:latest .
 ```
 
 ### Run Container
 
 ```bash
-docker run -p 80:80 lb-frontend
+docker run -d -p 80:80 --name lb-frontend lb-frontend:latest
 ```
 
 The application will be available at [http://localhost](http://localhost)
+
+To stop the container:
+```bash
+docker stop lb-frontend
+```
+
+To remove the container:
+```bash
+docker rm lb-frontend
+```
 
 ### Docker Configuration
 
