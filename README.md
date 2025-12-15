@@ -65,7 +65,7 @@ docker build -t lb-frontend:latest .
 ### Run Container
 
 ```bash
-docker run -d -p 80:80 --name lb-frontend lb-frontend:latest
+docker run -d --name lb-frontend --network app-net -p 80:80 lb-frontend
 ```
 
 The application will be available at [http://localhost](http://localhost)
